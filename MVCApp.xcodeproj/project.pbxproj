@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B476A752863508200760DC3 /* ZoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B476A732863508200760DC3 /* ZoomTableViewCell.swift */; };
-		9B476A762863508200760DC3 /* ZoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B476A742863508200760DC3 /* ZoomTableViewCell.xib */; };
-		9B632533286353E300835A85 /* ZoomBackgroundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B632532286353E300835A85 /* ZoomBackgroundModel.swift */; };
-		9B6325352863556100835A85 /* DummyDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6325342863556100835A85 /* DummyDB.swift */; };
 		9B9D63CC28634C5A00BB7D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D63CB28634C5A00BB7D43 /* AppDelegate.swift */; };
 		9B9D63CE28634C5A00BB7D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D63CD28634C5A00BB7D43 /* SceneDelegate.swift */; };
 		9B9D63D028634C5A00BB7D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D63CF28634C5A00BB7D43 /* ViewController.swift */; };
@@ -20,10 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B476A732863508200760DC3 /* ZoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTableViewCell.swift; sourceTree = "<group>"; };
-		9B476A742863508200760DC3 /* ZoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomTableViewCell.xib; sourceTree = "<group>"; };
-		9B632532286353E300835A85 /* ZoomBackgroundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomBackgroundModel.swift; sourceTree = "<group>"; };
-		9B6325342863556100835A85 /* DummyDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDB.swift; sourceTree = "<group>"; };
 		9B9D63C828634C5A00BB7D43 /* MVCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9D63CB28634C5A00BB7D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9D63CD28634C5A00BB7D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,50 +57,14 @@
 			isa = PBXGroup;
 			children = (
 				9B9D63D928634C5C00BB7D43 /* Info.plist */,
-				9B9D63E228634CA800BB7D43 /* Core */,
-				9B9D63E128634C8900BB7D43 /* Controller */,
-				9B9D63E028634C8400BB7D43 /* View */,
-				9B9D63DF28634C7E00BB7D43 /* Model */,
-			);
-			path = MVCApp;
-			sourceTree = "<group>";
-		};
-		9B9D63DF28634C7E00BB7D43 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9B632532286353E300835A85 /* ZoomBackgroundModel.swift */,
-				9B6325342863556100835A85 /* DummyDB.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9B9D63E028634C8400BB7D43 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9B476A732863508200760DC3 /* ZoomTableViewCell.swift */,
-				9B476A742863508200760DC3 /* ZoomTableViewCell.xib */,
-				9B9D63D128634C5A00BB7D43 /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9B9D63E128634C8900BB7D43 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9B9D63CF28634C5A00BB7D43 /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9B9D63E228634CA800BB7D43 /* Core */ = {
-			isa = PBXGroup;
-			children = (
 				9B9D63CB28634C5A00BB7D43 /* AppDelegate.swift */,
 				9B9D63CD28634C5A00BB7D43 /* SceneDelegate.swift */,
 				9B9D63D428634C5C00BB7D43 /* Assets.xcassets */,
 				9B9D63D628634C5C00BB7D43 /* LaunchScreen.storyboard */,
+				9B9D63CF28634C5A00BB7D43 /* ViewController.swift */,
+				9B9D63D128634C5A00BB7D43 /* Main.storyboard */,
 			);
-			path = Core;
+			path = MVCApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +127,6 @@
 			files = (
 				9B9D63D828634C5C00BB7D43 /* LaunchScreen.storyboard in Resources */,
 				9B9D63D528634C5C00BB7D43 /* Assets.xcassets in Resources */,
-				9B476A762863508200760DC3 /* ZoomTableViewCell.xib in Resources */,
 				9B9D63D328634C5A00BB7D43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,11 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B632533286353E300835A85 /* ZoomBackgroundModel.swift in Sources */,
 				9B9D63D028634C5A00BB7D43 /* ViewController.swift in Sources */,
 				9B9D63CC28634C5A00BB7D43 /* AppDelegate.swift in Sources */,
-				9B476A752863508200760DC3 /* ZoomTableViewCell.swift in Sources */,
-				9B6325352863556100835A85 /* DummyDB.swift in Sources */,
 				9B9D63CE28634C5A00BB7D43 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

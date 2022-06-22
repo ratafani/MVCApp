@@ -7,19 +7,17 @@
 
 import UIKit
 
-//TODO: DONE!!!
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var zoomTableView: UITableView!
     
-    var arrZoom: [ZoomBackground] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "Zoom Background List"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
         setupTable()
         addData()
         
@@ -27,18 +25,14 @@ class ViewController: UIViewController {
 
     //TODO: Setup Table
     func setupTable(){
-        let nib = UINib(nibName: "ZoomTableViewCell", bundle: nil)
-        zoomTableView.register(nib, forCellReuseIdentifier: "custom1")
         zoomTableView.delegate = self
         zoomTableView.dataSource = self
-        
         zoomTableView.layer.cornerRadius = 10
     }
     
     //TODO: Read Data
     func addData(){
-        arrZoom = DummyDB.shared.fetchData()
-        zoomTableView.reloadData()
+        
     }
     
 }
@@ -46,12 +40,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrZoom.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = zoomTableView.dequeueReusableCell(withIdentifier: "custom1") as! ZoomTableViewCell
-        cell.zoomBackground = arrZoom[indexPath.row]
+        let cell = UITableViewCell()
         return cell
     }
     
