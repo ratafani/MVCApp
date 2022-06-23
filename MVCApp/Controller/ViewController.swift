@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var zoomTableView: UITableView!
     
+    var arrZoom = [ZoomBackground]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +30,16 @@ class ViewController: UIViewController {
         zoomTableView.delegate = self
         zoomTableView.dataSource = self
         zoomTableView.layer.cornerRadius = 10
+        
+        let xib = UINib(nibName: "ZoomTableViewCell", bundle: nil)
+        zoomTableView.register(xib, forCellReuseIdentifier: "custom1")
+        
     }
     
     //TODO: Read Data
     func addData(){
-        
+        arrZoom = DummyDB.shared.fetchData()
+        zoomTableView.reloadData()
     }
     
 }
@@ -40,11 +47,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return arrZoom.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = zoomTableView.dequeueReusableCell(withIdentifier: "custom1") as! ZoomTableViewCell
+        cell.zoomBackground = arrZoom[indexPath.row]
         return cell
     }
     
