@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 //TODO: DONE!!!
 
@@ -83,5 +84,10 @@ extension ViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         zoomTableView.deselectRow(at: indexPath, animated: true)
+        
+        let view = DetailView(zoomBackground: arrZoom[indexPath.row])
+        let vc = UIHostingController(rootView: view)
+//        navigationController?.present(vc, animated: true)
+        navigationController?.show(vc, sender: nil)
     }
 }
