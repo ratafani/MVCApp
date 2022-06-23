@@ -27,8 +27,12 @@ class ViewController: UIViewController {
 
     //TODO: Setup Table
     func setupTable(){
+        
         let nib = UINib(nibName: "ZoomTableViewCell", bundle: nil)
         zoomTableView.register(nib, forCellReuseIdentifier: "custom1")
+        
+        zoomTableView.register(SwiftUITableCell<SwiftUICell>.self, forCellReuseIdentifier: "custom2")
+        
         zoomTableView.delegate = self
         zoomTableView.dataSource = self
         
@@ -50,9 +54,21 @@ extension ViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = zoomTableView.dequeueReusableCell(withIdentifier: "custom1") as! ZoomTableViewCell
-        cell.zoomBackground = arrZoom[indexPath.row]
-        return cell
+        
+        if indexPath.row % 2 == 0{
+            
+            let cell = zoomTableView.dequeueReusableCell(withIdentifier: "custom1") as! ZoomTableViewCell
+            cell.zoomBackground = arrZoom[indexPath.row]
+            return cell
+        }else{
+//            let cell = zoomTableView.dequeueReusableCell(withIdentifier: "custom1") as! ZoomTableViewCell
+//            cell.zoomBackground = arrZoom[indexPath.row]
+//            return cell
+            let cell = zoomTableView.dequeueReusableCell(withIdentifier: "custom2") as! SwiftUITableCell<SwiftUICell>
+            cell.host(SwiftUICell(zoomBackground: arrZoom[indexPath.row]), parent: self)
+            return cell
+        }
+        
     }
     
     
@@ -61,7 +77,7 @@ extension ViewController: UITableViewDataSource{
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return zoomTableView.frame.height / 8
+        return zoomTableView.frame.height / 7
         
     }
     
